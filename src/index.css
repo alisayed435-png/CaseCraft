@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --c-white: #FFFFFF;
+  --c-black: #242424;
+  --c-slate: #5C7C89;
+  --c-teal: #1F4959;
+  --c-navy: #011425;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--c-navy);
+  color: var(--c-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--c-navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-teal);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-slate);
+}
+
+/* Focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--c-slate);
+  outline-offset: 2px;
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--c-teal);
+  color: var(--c-white);
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400;
+  }
+  
+  .bg-glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  
+  .glow-teal {
+    box-shadow: 0 0 40px rgba(31, 73, 89, 0.4);
+  }
+  
+  .glow-slate {
+    box-shadow: 0 0 30px rgba(92, 124, 137, 0.3);
+  }
+}
